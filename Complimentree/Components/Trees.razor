@@ -1,0 +1,46 @@
+﻿@using Complimentree.Models
+<h2 class="tree-head">Trees</h2>
+
+<ul class="trees-list">
+    @foreach(var tree in trees)
+    {
+        <li>
+            <h3>Name: @tree.Name</h3>
+            <h3>Species: @tree.Species</h3>
+            <h3>Location: @tree.Location</h3>
+            <h3>Size: @tree.Size</h3>
+            <h3>Name: @tree.Name</h3>
+            <p>Compliments</p>
+            @if (tree.Compliments.Count ==0)
+            {
+                <p>oops, No compliment for this tree</p>
+            }
+            else
+            {
+               <ul>
+                    @foreach (var compliment in tree.Compliments)
+                    {
+                        <li>@compliment.Text</li>
+                    }
+                </ul>
+            }
+
+            
+        </li>
+    }
+</ul>
+
+
+
+@code {
+
+    List<Tree> trees = new List<Tree>
+{
+    new Tree { Id = 1, Name = "The Old Oak", Species = "Quercus robur", Location = (52.7719m, -1.2062m), Size = "Large", Compliments = new List<Compliment>() },
+    new Tree { Id = 2, Name = "The Weeping Willow", Species = "Salix babylonica", Location = (51.5074m, -0.1278m), Size = "Medium", Compliments = new List<Compliment>() },
+    new Tree { Id = 3, Name = "The Silver Birch", Species = "Betula pendula", Location = (53.4808m, -2.2426m), Size = "Small", Compliments = new List<Compliment>() },
+    new Tree { Id = 4, Name = "The Giant Sequoia", Species = "Sequoiadendron giganteum", Location = (54.9783m, -1.6178m), Size = "Massive", Compliments = new List<Compliment>() },
+    new Tree { Id = 5, Name = "The Cherry Blossom", Species = "Prunus serrulata", Location = (51.4816m, -3.1791m), Size = "Small", Compliments = new List<Compliment>() }
+};
+
+}
