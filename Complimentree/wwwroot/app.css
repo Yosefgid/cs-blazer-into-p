@@ -267,3 +267,27 @@ h1 {
 .joke{
     list-style: none;
 }
+/*Treeheader*/
+.tree-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .tree-card-header h3 {
+        margin: 0;
+    }
+
+    .tree-card-header button {
+        background-color: #2d6a4f;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+        .tree-card-header button:hover {
+            background-color: #40916c;
+        }

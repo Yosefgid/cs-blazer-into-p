@@ -1,15 +1,22 @@
-﻿@using Complimentree.Models
+﻿@rendermode InteractiveServer
+@using Complimentree.Models
+
 <h2 class="tree-head">Trees</h2>
 
 <ul class="trees-list">
     @foreach(var tree in trees)
     {
         <li>
+            <div class="tree-card">   
+            <div class="tree-header">
             <h3>Name: @tree.Name</h3>
+                    <p>@count</p>
+                    <button @onclick="() => count++">Test</button>
+                <button @onclick="() => AddCompliment(tree.Id)">Compliment this tree! 🌳</button>
+            </div>
             <h3>Species: @tree.Species</h3>
             <h3>Location: @tree.Location</h3>
             <h3>Size: @tree.Size</h3>
-            <h3>Name: @tree.Name</h3>
             <p>Compliments</p>
             @if (tree.Compliments.Count ==0)
             {
@@ -25,6 +32,7 @@
                 </ul>
             }
 
+            </div>
             
         </li>
     }
@@ -33,7 +41,7 @@
 
 
 @code {
-
+    int count = 0;
     List<Tree> trees = new List<Tree>
 {
     new Tree { Id = 1, Name = "The Old Oak", Species = "Quercus robur", Location = (52.7719m, -1.2062m), Size = "Large", Compliments = new List<Compliment>{new Compliment{Id =1, Text= "Why the long bark?" } } },
@@ -42,5 +50,21 @@
     new Tree { Id = 4, Name = "The Giant Sequoia", Species = "Sequoiadendron giganteum", Location = (54.9783m, -1.6178m), Size = "Massive", Compliments = new List<Compliment>() },
     new Tree { Id = 5, Name = "The Cherry Blossom", Species = "Prunus serrulata", Location = (51.4816m, -3.1791m), Size = "Small", Compliments = new List<Compliment>() }
 };
+
+    public void AddCompliment(int id)
+    {
+
+        Tree tree = null;
+        foreach(var t in trees)
+        {
+            if(t.Id == id)
+            {
+                tree = t;
+                break;
+
+            }
+        }
+        tree.Compliments.Add(Compliment.GetCompliment(tree.Compliments.Count + 1));
+    }
 
 }
