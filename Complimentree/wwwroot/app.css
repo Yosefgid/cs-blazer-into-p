@@ -20,7 +20,7 @@ h1:focus {
     color: white;
 }
 
-    .blazor-error-boundary::after {
+.blazor-error-boundary::after {
         content: "An error has occurred."
     }
 
@@ -43,13 +43,15 @@ header {
     justify-content: space-between;
 }
 
-    header h1 {
+
+header h1 {
         margin: 0;
         font-size: 1.8rem;
         color: #f1f8f2;
     }
 
-    header p {
+
+header p {
         margin: 0;
         font-style: italic;
         color: #f1f8f2;
@@ -84,7 +86,7 @@ h1 {
     padding: 60px 40px;
 }
 
-    .about-content h2 {
+.about-content h2 {
         display: block;
         margin-bottom: 20px;
         animation: growIn 1s ease-out forwards;
@@ -92,7 +94,7 @@ h1 {
         display: inline-block;
     }
 
-    .about-content p {
+.about-content p {
         animation: growIn 1s ease-out 0.4s forwards;
         transform: scale(0);
         display: inline-block;
@@ -117,7 +119,7 @@ h1 {
     margin: 0 auto;
 }
 
-    .intro h2 {
+.intro h2 {
         font-size: 2rem;
         margin-bottom: 40px;
     }
@@ -194,14 +196,13 @@ h1 {
     width: 100%;
     text-align: left;
 }
-
-    .intro-par img {
+.intro-par img {
         width: 50%;
         max-width: 300px;
         border-radius: 8px;
         display: block;
         margin: 20px auto;
-    }
+}
 
 @keyframes fadeUp {
     from {
@@ -215,7 +216,6 @@ h1 {
     }
 }
 /*Trees baby*/
-/* === TREES === */
 .trees-list {
     list-style: none;
     padding: 40px;
@@ -223,7 +223,7 @@ h1 {
     margin: 0 auto;
 }
 
-    .trees-list h2 {
+.trees-list h2 {
         text-align: center;
     }
 
@@ -235,24 +235,27 @@ h1 {
     margin-bottom: 20px;
 }
 
-    .tree-card h3 {
+
+.tree-card h3 {
         margin: 4px 0;
         font-size: 1rem;
         color: #2d6a4f;
     }
 
-        .tree-card h3:first-child {
+
+.tree-card h3:first-child {
             font-size: 1.3rem;
             margin-bottom: 10px;
         }
 
-    .tree-card p {
+
+.tree-card p {
         margin: 8px 0 4px 0;
         font-weight: bold;
         color: #40916c;
     }
 
-    .tree-card .no-compliments {
+.tree-card .no-compliments {
         color: #888;
         font-style: italic;
         font-weight: normal;
@@ -268,18 +271,20 @@ h1 {
     list-style: none;
 }
 /*Treeheader*/
-.tree-card-header {
+.tree-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
 
-    .tree-card-header h3 {
+ .tree-header h3 
+    {
         margin: 0;
     }
 
-    .tree-card-header button {
+.tree-header button 
+{
         background-color: #2d6a4f;
         color: white;
         border: none;
@@ -288,6 +293,7 @@ h1 {
         cursor: pointer;
     }
 
-        .tree-card-header button:hover {
-            background-color: #40916c;
-        }
+.tree-header button:hover 
+{
+ background-color: #40916c;
+}
