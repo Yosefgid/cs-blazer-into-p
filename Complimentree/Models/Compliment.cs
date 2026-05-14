@@ -19,13 +19,24 @@
         "I will never leaf you.",
         "You've really branched out lately.",
         "You provide the perfect amount of shade on a hot day.",
-        "I'm really pine-ing for you."
+        "I'm really pine-ing for you.",
+        "Why are you weeping?"
         };
-        public static Compliment GetCompliment(int id)
+        public static Compliment GetCompliment(int id, int treeId)
         {
-            var complimentText = complimentTexts[rnd.Next(complimentTexts.Count)];
+            //var complimentText = complimentTexts[rnd.Next(complimentTexts.Count)];
+            //return new Compliment { Id = id, Text = complimentText };
+            string complimentText;
+            if(treeId == 2)
+            {
+                complimentText = complimentTexts[complimentTexts.Count - 1];
+            } else
+            {
+                complimentText = complimentTexts[rnd.Next(complimentTexts.Count)];
+            }
+
             return new Compliment { Id = id, Text = complimentText };
-         
+
         }
     }
 }
